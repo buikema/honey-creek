@@ -6,7 +6,7 @@ body {
 }
 header  {
 	padding: 1em; 
-	background-color: rgb(255,223,81);
+	background-color: rgb(255,231,129);
 	
 	/*Add background image for header
 	Need to create svg logo*/
@@ -30,7 +30,7 @@ section {
 h2 {
 	margin-bottom: 0.8em;
 	padding-bottom:  0.4em;
-	border-bottom: 3px solid rgb(255,223,81);
+	border-bottom: 3px solid rgb(255,231,129);
 	font-size: 1.4em;
 }
 h3 {
@@ -60,7 +60,7 @@ a.hover {
 	font-size: 1.4em;
 }
 .covenant-download button:hover {
-	border-style: 3px solid rgb(255,223,81);
+	border-style: 3px solid rgb(255,231,129);
 }
 .adobe-alert {
 	display: none;
@@ -100,7 +100,7 @@ footer a {
 	margin: 0.3em 0.5em;
 	padding: 0.4em;
 	border-radius: .6em;
-	background-color: rgb(255,223,81);
+	background-color: rgb(255,231,129);
 }
 .main-nav a {
 	color: #212121;
