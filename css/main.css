@@ -66,6 +66,15 @@ a.hover {
 	display: none;
 }
 
+/*lettering and styles for dues citation*/
+.dues ul {
+	margin: 0 1em;
+	list-style: lower-latin;
+}
+.dues li {
+	margin-bottom: 0.4em;
+}
+
 footer {
 	padding: 1em;
 	background-color: rgb(225,225,225);
@@ -108,4 +117,30 @@ footer a {
 .main-nav li:hover {
 	border-radius: 0.5em;
 	background-color: rgb(255,209,0);
+}
+
+/*styles for devices in the tablet range*/
+@media screen and (min-width: 485px) {
+    .container {
+    	margin: 0 auto;
+    	max-width: 36em;
+    }
+}
+
+/*styles for devices in the tablet range*/
+@media screen and (min-width: 767px) {
+    body {
+    	font-size: 18px;
+    }
+    .dues ul {
+	margin: 0 2em;
+	}
+    footer {
+    	display: flex;
+    	justify-content: space-around;
+    }
+    footer nav {
+    	margin-left: 2em;
+    	justify-content: flex-start;
+    }
 }
