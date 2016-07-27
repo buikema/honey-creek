@@ -9,10 +9,6 @@ body {
 header  {
 	padding: 1em; 
 	background-color: rgb(255,231,129);
-	
-/*	Add background image for header
-	Need to create svg logo    
-	background-image: "./images/background.png";*/
 }
 
 /*Leading title styles*/
@@ -45,8 +41,8 @@ h3 {
 	margin-bottom: .8em;
 }
 p{
-	margin-bottom: 0.8em;
-	line-height: 1.2em;
+	margin-bottom: 1em;
+	line-height: 1.4em;
 }
 img { 
 	display: block;
@@ -57,26 +53,50 @@ a {
 	text-decoration: none;
 	color: rgb(105,0,60);
 }
-a.hover {
-	text-decoration: underline;
+
+/*link underline animation*/
+a {
+	display: inline-block;
 }
+a:after {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 0;
+	background: transparent;
+	transition: width .25s ease, background-color .25s ease;
+}
+a:hover:after,
+a:focus:after {
+	width: 100%;
+	background: rgb(105,0,60);
+}
+
+/*styles for board members info cards*/
 figure {
+	margin-bottom: 0.5em;
 	display: flex;
 	justify-content: flex-start;
 	align-items: top;
 	min-width: 16em;
 }
 figcaption {
-	margin: 1em;
+	margin: 0.5em 1em;
 }
 figcaption h3 {
 	margin-top: 0em;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.4em;
+}
+figcaption p {
+	margin-bottom: 0.4em;
+}
+figcaption a {
+	font-size: 0.9em;
 }
 figure img {
 	display: inline;
-	margin: 1em;
-	max-width: 4em;
+	margin: 0.5em;
+	max-width: 5em;
 }
 ul {
 	list-style: none;
@@ -98,16 +118,24 @@ ol {
 	border-radius: .6em;
 	background-color: rgba(255,231,129,.6);;
 }
-.main-nav a {
-	color: #212121;
-}
-.main-nav li:hover {
+.main-nav li:hover,
+.main-nav li:focus {
 	border-radius: 0.5em;
 	background-color: rgba(255,231,129,1);
 	transform: scale(1.2, 1.2);
-	transition-duration: 0.2s;
-	-webkit-transition-duration: 0.2s; /* Safari */
+	transition-duration: 0.15s;
+	-webkit-transition-duration: 0.15s; /* Safari */
 }
+.main-nav a {
+	color: #212121;
+}
+/*removing link underline animation for nav items*/
+.main-nav a:after,
+.main-nav a:hover:after,
+.main-nav a:focus:after {
+	display: none;
+}
+
 
 /*styles for welcome list*/
 .welcome li {
@@ -121,17 +149,24 @@ ol {
 }
 .covenant-download a {
 	padding: 0.8em;
+	display: inline-block;
 	background-color: rgb(105,0,60);
 	color: rgb(250,250,250);
 	border-radius: 0.5em;
 	border-style: none;
 }
-.covenant-download:hover {
+.covenant-download a:hover {
     transform: scale(1.2, 1.2);
-	transition-duration: 0.2s;
-	-webkit-transition-duration: 0.2s; /* Safari */
+	transition-duration: 0.15s;
+	-webkit-transition-duration: 0.15s; /* Safari */
 }
 .adobe-alert {
+	display: none;
+}
+/*removing link underline animation for download link*/
+.covenant-download a:after,
+.covenant-download a:hover:after,
+.covenant-download a:focus:after {
 	display: none;
 }
 
@@ -141,8 +176,8 @@ ol {
 	list-style: lower-latin;
 }
 .dues li {
-	margin-bottom: 0.4em;
-	line-height: 1.2em;
+	margin-bottom: 0.5em;
+	line-height: 1.4em;
 }
 
 /*styles for board members list*/
@@ -253,7 +288,13 @@ footer a {
 
 	/*styles for dues section*/
     .dues ul {
-	margin: 0 2em;
+		margin: 0 2em;
+	}
+	
+	.covenant-download:visited {
+		.adobe-alert {
+			display: visible;
+		}
 	}
 }
 
