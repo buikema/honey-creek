@@ -4,21 +4,29 @@ body {
 	color: #212121;
  	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-	/*Firefox support only*/
-    /*scroll-behavior: smooth;*/
-}
-header  {
-	background-color: rgb(255,231,129);
 }
 
 /*Leading title styles*/
-h1 {
+header  {
+	background-color: rgb(255,231,129);
+	overflow: hidden;
+}
+header svg {
+	position: relative;
+	z-index: 0;
+	margin: -15em 0 -5em 50vw;
+	width: 16em;
+	border-radius: 4em;
+}
+header h1 {
+	position: relative;
+	z-index: 1;
 	padding: 1rem;
 	font-size: 1.6em;
 	line-height: 1.2;
 	font-weight: 700;
 }
-h1 span {
+header h1 span {
 	font-size: 0.8em;
 	font-weight: 400;
 }
@@ -31,16 +39,13 @@ section {
 	margin-top: 1em;
 	margin-bottom: 2em;
 }
-section span {
-	font-style: italic;
-}
 h2 {
 	margin-bottom: 0.8em;
 	padding-bottom:  0.4em;
 	border-bottom: 3px solid rgb(255,231,129);
 	font-size: 1.75em;
 	font-weight: 200;
-	letter-spacing: 0.5px;
+	letter-spacing: 1px;
 }
 h3 {
 	margin-top: 1.4em;
@@ -59,56 +64,16 @@ a {
 	text-decoration: none;
 	color: rgb(105,0,60);
 }
-
-/*link underline animation*/
-a {
-	display: inline-block;
-}
-a:after {
-	content: "";
-	display: block;
-	height: 2px;
-	width: 0;
-	background: transparent;
-	transition: width .25s ease, background-color .25s ease;
-}
-a:hover:after,
-a:focus:after {
-	width: 100%;
-	background: rgb(105,0,60);
+ul, ol {
+    list-style: none;
 }
 
-/*styles for board members info cards*/
-figure {
-	margin-bottom: 0.5em;
-	display: flex;
-	justify-content: flex-start;
-	align-items: top;
-	min-width: 16em;
+/*Styles for special text types*/
+span.italic {
+    font-style: italic;
 }
-figcaption {
-	margin: 0.5em 1em;
-}
-figcaption h3 {
-	margin-top: 0em;
-	margin-bottom: 0.4em;
-}
-figcaption p {
-	margin-bottom: 0.4em;
-}
-figcaption a {
-	font-size: 0.9em;
-}
-figure img {
-	display: inline;
-	margin: 0.5em;
-	max-width: 5em;
-}
-ul {
-	list-style: none;
-}
-ol {
-	list-style: none;
+span.invoices {
+    text-decoration: underline;
 }
 
 /*styles and behavior for primary navigation list at top of page*/
@@ -128,7 +93,7 @@ ol {
 .main-nav li:focus {
 	border-radius: 0.5em;
 	background-color: rgba(255,231,129,1);
-	transform: scale(1.2, 1.2);
+	transform: scale(1.1, 1.1);
 	transition-duration: 0.15s;
 	-webkit-transition-duration: 0.15s; /* Safari */
 }
@@ -145,6 +110,7 @@ ol {
 /*styles for welcome list*/
 .welcome li {
 	margin: 0 1em 1em 1em;
+	list-style: square;
 }
 
 /*styles and behavior for link to download HOA covenant PDF*/
@@ -161,7 +127,7 @@ ol {
 	border-style: none;
 }
 .covenant-download a:hover {
-    transform: scale(1.2, 1.2);
+    transform: scale(1.1, 1.1);
 	transition-duration: 0.15s;
 	-webkit-transition-duration: 0.15s; /* Safari */
 }
@@ -186,29 +152,44 @@ ol {
 }
 
 /*styles for google maps embeds*/
-.google-maps {
-	margin: 2em 0em 1em 0em;
-	position: relative;
-	padding-bottom: 75%;  /*This is the aspect ratio*/
-	height: 0;
-	overflow: hidden;
-}
-.google-maps iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100% !important;
-	height: 100% !important;
+.map figcaption {
+    margin-top: 1em;
 }
 
-/*styles for board members list*/
+/*styles for board members info cards*/
+.board figure {
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 16em;
+}
+.board figcaption {
+    margin: 0.5em 1em;
+}
+.board figcaption h3 {
+    margin-top: 0;
+    margin-bottom: 0.4em;
+}
+.board figcaption p {
+    margin-bottom: 0.4em;
+}
+.board figcaption a {
+    font-size: 0.9em;
+}
+.board figure img {
+    display: inline;
+    margin: 0.5em;
+    max-width: 5em;
+    border-left: 3px solid rgb(255,231,129);
+}
 .board ol {
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: flex-start;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
 }
 .board ol li {
-	max-width: 18em;
+    max-width: 18em;
 }
 
 /*styles for list of committees*/
@@ -223,6 +204,45 @@ ol {
 	padding: 0.3em;
 	border-radius: .6em;
 	background-color: rgb(225,225,225);
+}
+
+/*Styles for local government section*/
+.government figure {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2em;
+}
+.government a {
+    width: 100%;
+}
+.government figcaption {
+    position: absolute;
+    padding: 0.5em 2em;
+    width: 100%;
+    top: 0;
+    background-color: rgba(235,235,235,0.5);
+}
+.government h3 {
+    margin: 0;
+    color: #212121;
+    font-size: 1em;
+}
+.government p {
+    margin: 0.5em 0 0 0;
+    color: #212121;
+    font-size: 0.8em;
+    line-height: 1.2em;
+
+}
+/*Reset for link effects*/
+.government a:after {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    background: transparent;
+    transition: none;
 }
 
 /*styles for footer section*/
@@ -250,6 +270,24 @@ footer a {
 	font-style: italic;
 }
 
+/*link underline animation*/
+a {
+    display: inline-block;
+}
+a:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: transparent;
+    transition: width .25s ease, background-color .25s ease;
+}
+a:hover:after,
+a:focus:after {
+    width: 100%;
+    background: rgb(105,0,60);
+}
+
 /*styles for devices in the tablet range*/
 @media screen and (min-width: 27em) {
 	header {
@@ -258,20 +296,24 @@ footer a {
 	}
 	header div {
 		margin: 0 auto;
-		padding: 3em 0em;
+		padding: 3em 0;
     	width: 36em;
 		transform: skewY(-2deg);
-
-		background-image: url(../images/HoneyCreekBeeLogo-Sq.png);
-		background-repeat: no-repeat;
-		background-size: 40%;
-		background-position: 75% -4em, center;
 	}
-	
+	header h1 {
+		font-size: 2em;
+	}
 	.container {
     	margin: 0 auto;
     	max-width: 36em;
     }
+	.government h3 {
+		font-size: 1.2em;
+	}
+	.government p {
+		font-size: 1em;
+		line-height: 1.2em;
+	}
 
 	/*styles for footer*/
     footer {
@@ -294,10 +336,15 @@ footer a {
 	header div {
 		background-position: 95% -2em, center;
 	}
-	h1 {
+	header h1 {
 		font-size: 2.4em;
 		line-height: 1.2;
 		font-weight: 700;
+	}
+	header svg {
+		margin: -15em 0 -5em 40vw;
+		width: 24em;
+		border-radius: 8em;
 	}
 	h2 {
 		margin-bottom: 0.8em;
@@ -305,7 +352,7 @@ footer a {
 		border-bottom: 3px solid rgb(255,231,129);
 		font-size: 2.4em;
 		font-weight: 200;
-		letter-spacing: 0.5px;
+		letter-spacing: 1px;
 	}
 	.board ol {
 		flex-flow: row wrap;
@@ -313,12 +360,18 @@ footer a {
 	.board ol li {
 		width: 17em;
 	}
+	.government figcaption {
+		padding: 1em 2em;
+	}
 }
 
 /*styles for devices in the tablet range*/
 @media screen and (min-width: 47.9em) {
     body {
     	font-size: 18px;
+    }
+    header svg {
+        margin: -15em 0 -5em 30vw;
     }
 
 	/*styles for dues section*/
@@ -329,6 +382,22 @@ footer a {
 	.adobe-alert:visited {
 		display: block;
 	}
+	.government ul {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+	}
+	.government li {
+		overflow: hidden;
+		width: 50%;
+		height: 17em;
+		font-size: 0.75em;
+	}
+	.government li:first-child {
+		width: 100%;
+		height: 20em;
+		font-size: 1em;
+	}
 }
 
 /*styles for large screens*/
@@ -338,7 +407,7 @@ footer a {
 		line-height: 1.4em;
     }
 	header div {
-		background-position: 100% -5em, center;
+		background-position: 100% -3em, center;
 	}
     
 }
