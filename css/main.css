@@ -4,6 +4,7 @@ body {
 	color: #212121;
  	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+	line-height: 1.375rem;
 }
 
 /*Leading title styles*/
@@ -22,12 +23,12 @@ header h1 {
 	position: relative;
 	z-index: 1;
 	padding: 1rem;
-	font-size: 1.6em;
-	line-height: 1.2;
+	font-size: 1.6rem;
+	line-height: 1.1em;
 	font-weight: 700;
 }
 header h1 span {
-	font-size: 0.8em;
+	font-size: 0.875em;
 	font-weight: 400;
 }
 
@@ -35,25 +36,21 @@ header h1 span {
 article {
 	margin: 0 1rem;
 }
-section {
-	margin-top: 1em;
-	margin-bottom: 2em;
-}
 h2 {
-	margin-bottom: 0.8em;
-	padding-bottom:  0.4em;
+	margin: 0.688em 0;
 	border-bottom: 3px solid rgb(255,231,129);
-	font-size: 1.75em;
+	font-size: 2rem;
 	font-weight: 200;
+	line-height: 1.375em;
 	letter-spacing: 1px;
 }
 h3 {
-	margin-top: 1.4em;
-	margin-bottom: .8em;
+	margin-top: 1em 0 0 0;
+	font-size: 1.414rem;
+	line-height: 1.91em;
 }
 p{
 	margin-bottom: 1em;
-	line-height: 1.4em;
 }
 img { 
 	display: block;
@@ -74,6 +71,9 @@ span.italic {
 }
 span.invoices {
     text-decoration: underline;
+}
+date {
+	font-style: italic;
 }
 
 /*styles and behavior for primary navigation list at top of page*/
